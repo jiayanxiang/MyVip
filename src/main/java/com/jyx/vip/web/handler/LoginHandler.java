@@ -1,12 +1,12 @@
 package com.jyx.vip.web.handler;
 
+import com.jyx.vip.common.ThisSystemException;
 import com.jyx.vip.entity.UserEntity;
 import com.jyx.vip.funcation.UserFuncation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.ResponseBody;
 
 import javax.servlet.http.HttpServletRequest;
 
@@ -35,6 +35,36 @@ public class LoginHandler {
 
     @RequestMapping("/index.do")
     public String index() {
-        return "/index";
+        return "index";
+    }
+
+    @RequestMapping("/welcome.do")
+    public String welcome() {
+        return "welcome";
+    }
+
+    @RequestMapping("/logout.do")
+    public String logout(HttpServletRequest httpServletRequest) {
+        httpServletRequest.getSession().invalidate();
+        return "redirect:/login.jsp";
+    }
+
+    @RequestMapping(method = RequestMethod.GET, path = "/updatepassword.do")
+    public String updatePasswordView() {
+        return null;
+    }
+
+    @RequestMapping(method = RequestMethod.POST, path = "/updatepassword.do")
+    public String updatePassword(String oldPassword,String newPassword,String newPasswordConfirm,HttpServletRequest httpServletRequest) throws Exception{
+        try {
+            UserEntity currentUser = (UserEntity) httpServletRequest.getSession().getAttribute("currentUser");
+            userFuncation.updatePassword(currentUser.getId(),oldPassword,newPassword,newPasswordConfirm);
+        }catch (ThisSystemException e){
+            httpServletRequest.setAttribute("message",e.getMessage());
+            return "updatepassword";
+        }
+
+        httpServletRequest.getSession().setAttribute("message","修改成功，请重新登录！");
+        return "redirect:/login.jsp";
     }
 }

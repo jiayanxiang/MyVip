@@ -1,6 +1,7 @@
 package com.jyx.vip.funcation;
 
 import com.jyx.vip.entity.UserEntity;
+import org.springframework.transaction.annotation.Transactional;
 
 /**
  * @author:jyx
@@ -9,4 +10,7 @@ import com.jyx.vip.entity.UserEntity;
  */
 public interface UserFuncation {
     UserEntity login(String account,String password) throws Exception;
+
+    @Transactional
+    UserEntity updatePassword(String id,String oldPassword,String newPassword,String newPasswordConfirm) throws Exception;
 }

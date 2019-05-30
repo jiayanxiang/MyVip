@@ -4,6 +4,11 @@
     <meta charset="utf-8">
     <title>登录</title>
 </header>
+<script>
+    if (window.top !== window.self){
+        window.top.location.href = location.href;
+    }
+</script>
 <body>
 <strong>${message}</strong>
 <form action="/login.do" method="post">
@@ -17,5 +22,6 @@
         <button type="submit">login</button>
     </p>
 </form>
+<%session.removeAttribute("message");%>
 </body>
 </html>

@@ -20,4 +20,28 @@ public class AssertThrowUtils {
             throw new ThisSystemException(message);
         }
     }
+
+    public static void assertNotNull(String message,Object o){
+        if (o == null){
+           throw new ThisSystemException(message);
+        }
+    }
+
+    public static void assertNull(String message,Object o){
+        if (o != null){
+            throw new ThisSystemException(message);
+        }
+    }
+
+    public static void assertEquals(String message,Object a,Object b){
+        if (a == null?a!=b:!a.equals(b)){
+            throw new ThisSystemException(message);
+        }
+    }
+
+    public static void assertNotEquals(String message,Object a,Object b){
+        if (a == null?a==b:a.equals(b)){
+            throw new ThisSystemException(message);
+        }
+    }
 }

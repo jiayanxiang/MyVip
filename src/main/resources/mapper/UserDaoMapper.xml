@@ -10,10 +10,6 @@
     </select>
 
     <update id="update">
-       update sys_user set
-       account= ?,
-       name = ?,
-       password = ?,
-       where ${key} = #{value };
+       update sys_user set account= #{account},name = #{name},password = #{password} where id = #{id};
     </update>
 </mapper>
