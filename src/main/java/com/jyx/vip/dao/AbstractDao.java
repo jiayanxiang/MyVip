@@ -22,4 +22,6 @@ public interface AbstractDao<T> {
     Boolean exsits(@Param("key") String key, @Param("value") Object value) throws Exception;
 
     List<T> selectLike(@Param("key") String key) throws Exception;
+
+    List<T> selectAll() throws Exception;
 }

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.jyx.vip.dao.VipRankDao">
+
+    <select id="selectAll" resultType="com.jyx.vip.entity.VipRankEntity">
+        select *from vip_rank order by id
+    </select>
+
+    <resultMap id="VipRankMap" type="com.jyx.vip.entity.VipRankEntity">
+        <id property="id" column="id"/>
+        <result property="name" column="name"/>
+        <result property="needAmount" column="needAmount"/>
+        <result property="discount" column="discount"/>
+        <result property="remark" column="remark"/>
+    </resultMap>
+</mapper>

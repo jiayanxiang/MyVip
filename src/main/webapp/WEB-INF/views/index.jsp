@@ -70,22 +70,22 @@
     <menu>
         <ul>
             <li>
-                <a>VIP客户查询</a>
+                <a href="vip/qry.do" target="mainFrame">VIP客户查询</a>
             </li>
             <li>
-                <a>录入VIP客户</a>
+                <a href="vip/qry.do" target="mainFrame">录入VIP客户</a>
             </li>
             <li>
-                <a>VIP客户管理</a>
+                <a href="vip/qry.do" target="mainFrame">VIP客户管理</a>
             </li>
             <li>
-                <a>查看VIP消费记录</a>
+                <a href="vip/qry.do" target="mainFrame">查看VIP消费记录</a>
             </li>
             <li>
-                <a>录入VIP消费记录</a>
+                <a href="vip/qry.do" target="mainFrame">录入VIP消费记录</a>
             </li>
             <li>
-                <a>VIP消费记录管理</a>
+                <a href="vip/qry.do" target="mainFrame">VIP消费记录管理</a>
             </li>
             <li>
                 <a href="/updatepassword.do" target="mainFrame">修改密码</a>

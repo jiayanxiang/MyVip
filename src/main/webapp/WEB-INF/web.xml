@@ -19,7 +19,7 @@
 
     <!--监听器 启动spring容器-->
     <listener>
-        <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
+        <listener-class>com.jyx.vip.listener.ApplicationListener</listener-class>
     </listener>
     <context-param>
         <param-name>contextConfigLocation</param-name>
