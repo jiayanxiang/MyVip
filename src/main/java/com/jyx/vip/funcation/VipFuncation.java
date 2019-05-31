@@ -1,6 +1,8 @@
 package com.jyx.vip.funcation;
 
 import com.jyx.vip.entity.VipEntity;
+import com.jyx.vip.web.handler.ao.VipAo;
+import org.springframework.transaction.annotation.Transactional;
 
 /**
  * @author:jyx
@@ -9,4 +11,7 @@ import com.jyx.vip.entity.VipEntity;
  */
 public interface VipFuncation {
     VipEntity queryVip(String code) throws Exception;
+
+    @Transactional
+    VipEntity addVip(VipAo vipAo) throws Exception;//录入VIP
 }

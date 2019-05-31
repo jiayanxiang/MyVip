@@ -73,7 +73,7 @@
                 <a href="vip/qry.do" target="mainFrame">VIP客户查询</a>
             </li>
             <li>
-                <a href="vip/qry.do" target="mainFrame">录入VIP客户</a>
+                <a href="/vip/add.do" target="mainFrame">录入VIP客户</a>
             </li>
             <li>
                 <a href="vip/qry.do" target="mainFrame">VIP客户管理</a>

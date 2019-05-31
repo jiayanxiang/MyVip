@@ -3,6 +3,7 @@ package com.jyx.vip.web.handler;
 import com.jyx.vip.common.ThisSystemException;
 import com.jyx.vip.entity.VipEntity;
 import com.jyx.vip.funcation.VipFuncation;
+import com.jyx.vip.web.handler.ao.VipAo;
 import com.jyx.vip.web.handler.vo.VipVo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -50,5 +51,24 @@ public class VipHandler extends AbstractHandler {
             model.put("message", e.getMessage());
         }
         return "vip/qry";
+    }
+
+    @RequestMapping(method = RequestMethod.GET,path = "/add.do")
+    public String addView(){
+        return "vip/add";
+    }
+
+    @RequestMapping(method = RequestMethod.POST,path = "/add.do")
+    public String add(VipAo vipAo,HttpServletRequest httpServletRequest) throws Exception{
+        //1.ao业务方法执行
+        //2.业务跳转
+        try{
+            VipEntity vipEntity = vipFuncation.addVip(vipAo);
+            httpServletRequest.setAttribute("message","录入成功!");
+
+        }catch (ThisSystemException e){
+            httpServletRequest.setAttribute("message",e.getMessage());
+        }
+        return "vip/add";
     }
 }
