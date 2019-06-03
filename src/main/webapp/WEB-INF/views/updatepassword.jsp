@@ -12,7 +12,7 @@
 </head>
 <body>
 <strong>${message}</strong>
-<form action="/updatepassword.do" method="post">
+<form action="updatepassword.do" method="post">
     <p>
         <label>旧密码:<input name="oldPassword"></label>
     </p>

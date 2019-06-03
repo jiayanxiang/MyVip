@@ -33,6 +33,11 @@ public class LoginHandler {
         return "redirect:/index.do";
     }
 
+    @RequestMapping(method = RequestMethod.GET, path = "/login.do")
+    public String loginView() {
+        return "forward:/login.jsp";
+    }
+
     @RequestMapping("/index.do")
     public String index() {
         return "index";
@@ -55,16 +60,16 @@ public class LoginHandler {
     }
 
     @RequestMapping(method = RequestMethod.POST, path = "/updatepassword.do")
-    public String updatePassword(String oldPassword,String newPassword,String newPasswordConfirm,HttpServletRequest httpServletRequest) throws Exception{
+    public String updatePassword(String oldPassword, String newPassword, String newPasswordConfirm, HttpServletRequest httpServletRequest) throws Exception {
         try {
             UserEntity currentUser = (UserEntity) httpServletRequest.getSession().getAttribute("currentUser");
-            userFuncation.updatePassword(currentUser.getId(),oldPassword,newPassword,newPasswordConfirm);
-        }catch (ThisSystemException e){
-            httpServletRequest.setAttribute("message",e.getMessage());
+            userFuncation.updatePassword(currentUser.getId(), oldPassword, newPassword, newPasswordConfirm);
+        } catch (ThisSystemException e) {
+            httpServletRequest.setAttribute("message", e.getMessage());
             return "updatepassword";
         }
 
-        httpServletRequest.getSession().setAttribute("message","修改成功，请重新登录！");
+        httpServletRequest.getSession().setAttribute("message", "修改成功，请重新登录！");
         return "redirect:/login.jsp";
     }
 }

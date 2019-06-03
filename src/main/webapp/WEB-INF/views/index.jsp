@@ -63,7 +63,7 @@
     <h1>佳佳乐VIP消费查询系统</h1>
     <span>
         <b>${sessionScope.get("currentUser").name}</b>
-        <a href="/logout.do">退出登录</a>
+        <a href="logout.do">退出登录</a>
     </span>
 </header>
 <section class="body">
@@ -73,7 +73,7 @@
                 <a href="vip/qry.do" target="mainFrame">VIP客户查询</a>
             </li>
             <li>
-                <a href="/vip/add.do" target="mainFrame">录入VIP客户</a>
+                <a href="vip/add.do" target="mainFrame">录入VIP客户</a>
             </li>
             <li>
                 <a href="vip/qry.do" target="mainFrame">VIP客户管理</a>
@@ -88,12 +88,12 @@
                 <a href="vip/qry.do" target="mainFrame">VIP消费记录管理</a>
             </li>
             <li>
-                <a href="/updatepassword.do" target="mainFrame">修改密码</a>
+                <a href="updatepassword.do" target="mainFrame">修改密码</a>
             </li>
         </ul>
     </menu>
     <main>
-        <iframe src="/welcome.do" name="mainFrame"/>
+        <iframe src="welcome.do" name="mainFrame"/>
     </main>
 </section>
 </body>

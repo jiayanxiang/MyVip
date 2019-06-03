@@ -11,7 +11,7 @@
 </script>
 <body>
 <strong>${message}</strong>
-<form action="login.do" method="post">
+<form action="/test/testFrom.do" method="post">
     <p>
         <label>Account:<input name="account"></label>
     </p>
